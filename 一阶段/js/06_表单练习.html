@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        text-align: center;
+        font-family: '微软雅黑';
+        font-size: 40px;
+        color: black;
+    }
+
+    table {
+        width: 800px;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .add_button {
+        margin-top: 20px;
+    }
+
+    button {
+        padding: auto;
+    }
+
+    #table_header{
+        background-color: #b1adad;
+    }
+</style>
+<script src="script/table.js"></script>
+<body>
+
+    <div>表单练习</div>
+    <button class="add_button" onclick="add_event()">新增</button>
+    <table id = "table">
+        <tr id = "table_header">
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>操作</th>
+        </tr>
+
+        <tr>
+            <td>张三</td>
+            <td>18</td>
+            <td>男</td>
+            <td>
+                <button onclick="edit_event(this)">编辑</button>
+                <button onclick="delete_event(this)">删除</button>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+alert("外联样式Hello world")
