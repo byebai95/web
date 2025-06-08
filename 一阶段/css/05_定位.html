@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .box_1 {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+
+        .normal {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .relative {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: relative;
+            left: 20px;
+            top: 20px;
+        }
+
+        .absolute {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        .fixed {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: fixed;
+            left: 20px;
+            top: 100px;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+
+    <h1>相对定位</h1>
+    <div class="box_1">
+        <div class="normal"></div>
+        <div class="relative"></div>
+        <div class="normal"></div>
+    </div>
+
+    <h1>绝对定位</h1>
+    <div class="box_1">
+        <div class="normal"></div>
+        <div class="absolute"></div>
+        <div class="normal"></div>
+    </div>
+
+    <h1>固定定位</h1>
+    <div class="box_1">
+        <div class="normal"></div>
+        <div class="fixed"></div>
+        <div class="normal"></div>
+    </div>
+
+</body>
+
+</html>
