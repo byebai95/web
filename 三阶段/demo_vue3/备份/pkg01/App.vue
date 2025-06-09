@@ -1,22 +1,22 @@
 <template>
-    <div class="app">
+    <div>
         <h1>Hello World</h1>
-        <Person/>
     </div>
 </template>
 
 <script lang="ts">
-import Person from './components/Person.vue'
 export default {
     name: 'App',
-    components: {
-        Person
+    data() {
+        return {
+            message: 'Hello World'
+        }
     }
 }
 </script>
 
-<style scoped>
-.app {
+<style>
+h1 {
     background-color: #ddd;
     padding: 10px;
     font-size: 20px;
@@ -24,5 +24,7 @@ export default {
     text-align: left;
     border-radius: 5px;
     margin: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 </style>
