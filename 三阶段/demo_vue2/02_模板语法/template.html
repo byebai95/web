@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>Hello {{name}}</h2>
+
+        <hr>
+
+        <!-- 这是完整版本 -->
+        <a v-bind:href="data.url" target="_blank">百度链接 1</a>
+
+        <hr>
+
+        <!-- 这是简写版本 -->
+        <a :href="data.url" target="_blank">百度链接 2</a>
+
+        <!-- 嵌套变量 -->
+        <h2>{{data.name}}</h2>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                name: 'World',
+                data: {
+                    url: 'https://www.baidu.com',
+                    name: '百度一下'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
