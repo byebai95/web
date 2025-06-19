@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+
+<body>
+    <!-- 键盘事件 -->
+    <!-- 
+        keyup 键盘松开
+        keydown 键盘按下
+        keypress 键盘按下并松开
+        input 输入框内容改变
+        change 输入框内容改变
+    -->
+
+    <div id="app">
+        <input type="text" placeholder="键盘事件" @keyup.enter="showinfo"><br>
+        <button @click="sendMsg">按钮</button>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            methods: {
+                showinfo(e) {
+                    console.log(e.key)
+                },
+                sendMsg() {
+                    console.log("onclick")
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

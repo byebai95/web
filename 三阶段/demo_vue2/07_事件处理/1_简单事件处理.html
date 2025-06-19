@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js""></script>
+</head>
+<body>
+    <div id="app">
+        <h2>事件处理</h2>
+        <button v-on:click=" showInfo1">点击 1</button><br>
+        <button @click=" showInfo2($event, 100)">点击 2</button><br>
+    </div>
+   
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                message: "Hello Vue"
+            },
+            methods: {
+                showInfo1(event) {
+                    console.log(event)
+                    alert("Hello Vue")
+                },
+                showInfo2(event, value) {
+                    console.log(event, value)
+                    alert("Hello Vue " + value)
+                }
+            }
+        })
+    </script>
+    </body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js""></script>
+
+    <style>
+        .box1 {
+            height: 100px;
+            background-color: rgb(122, 184, 234);
+        }
+
+        * {
+            margin: 40px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>事件修饰符</h2>
+
+    <div class=" app">
+
+        <!-- prevent 阻止默认事件 -->
+        <a href="https://www.baidu.com" @click.prevent="stop_jump">阻止默认事件</a>
+
+        <!-- stop 阻止事件冒泡 -->
+        <div class="box1" v-on:click="sendInfo">
+            <button v-on:click.stop="sendInfo">阻止事件冒泡</button>
+        </div>
+
+        <!-- once 只触发一次 -->
+        <div class="box1">
+            <button v-on:click.once="sendInfo">只触发一次</button>
+        </div>
+
+        <!-- self 只触发自身 -->
+        <div class="box1" v-on:click.self="sendInfo">
+            <button v-on:click.stop="sendInfo">只触发自身</button>
+        </div>
+
+
+        <!-- capture 捕获事件 -->
+        <div class="box1" v-on:click.capture="sendMsg(2)">
+            <button v-on:click="sendMsg(1)">捕获事件</button>
+        </div>
+
+        <!-- passive 默认事件立即执行 -->
+        <a href="https://www.baidu.com" @click.passive="jump">阻止默认事件</a>
+
+    </div>
+
+
+    <script>
+        let vm = new Vue({
+            el: ".app",
+            data: {
+                message: "Hello Vue"
+            },
+            methods: {
+                stop_jump() {
+                    // event.preventDefault()
+                    alert("阻止跳转")
+                },
+                sendInfo() {
+                    alert("发送信息")
+                },
+                sendMsg(value) {
+                    console.log("发送信息" + value)
+                }
+            }
+        })
+    </script>
+
+    </body>
+
+</html>
