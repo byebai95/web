@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>今日天气：{{result}}</h2>
+        <button @click="weather = !weather">修改天气</button>
+    </div>
+    
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                weather: true
+            },
+            methods: {
+
+            },
+            computed: {
+                result: {
+                    get() {
+                        return this.weather ? "热" : "冷"
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

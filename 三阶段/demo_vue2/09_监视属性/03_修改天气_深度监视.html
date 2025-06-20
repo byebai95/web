@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>number.a = {{number.a}}</h2>
+        <button @click="number.a++"> A++</button>
+    </div>
+
+    <script>
+        vm = new Vue({
+            el: "#app",
+            data: {
+                number: {
+                    a: 0,
+                    b: 0
+                }
+            },
+            watch: {
+                number: {
+                    deep: true,
+                    handler(newVal, oldVal) {
+                        console.log("number 改变了",newVal, oldVal)
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
