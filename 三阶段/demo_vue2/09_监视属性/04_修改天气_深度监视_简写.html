@@ -27,16 +27,14 @@
                 incrementA() {
                     this.number.a++
                 }
-            },
-            watch: {
-                number: {
-                    deep: true,
-                    handler(newVal, oldVal) {
-                        console.log("number 改变了", newVal, oldVal)
-                    }
-                }
             }
+        })
 
+        // 修复：添加深度监视配置，并正确声明回调函数参数
+        vm.$watch('number', function (newVal, oldVal) {
+            console.log("number 改变了", newVal, oldVal)
+        }, {
+            deep: true
         })
     </script>
 </body>

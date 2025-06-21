@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../js/vue.js"></script>
+    <style>
+        .basic {
+            height: 100px;
+            width: 200px;
+            background-color: lightblue;
+        }
+
+        .blue {
+            background-color: burlywood;
+        }
+
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app">
+        <div class="basic" :class="newStyle" @click="changeStyle">{{name}}</div>
+    </div>
+
+    <script>
+        let vm = new Vue({
+            el: ".app",
+            data: {
+                name: "This is a title",
+                newStyle: ""
+            },
+            methods: {
+                changeStyle() {
+                    const styles = ['red','blue']
+                    const index = Math.floor(Math.random()*3)
+                    console.log("属性改变了")
+                    this.newStyle = styles[index]
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
