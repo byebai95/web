@@ -11,9 +11,10 @@
 <body>
 
     <div class="root">
-        <h3>ID姓名年龄</h3>
+        <input type="text" v-model="keyword">
+        <h3>ID 姓名 年龄</h3>
         <ul>
-            <li v-for="e in personArr">
+            <li v-for="e in filterArr" :key="e.id">
                 {{e.id}} --- {{e.name}} --- {{e.age}}
             </li>
         </ul>
@@ -30,8 +31,21 @@
                     { "id": "001", "name": "Lucy", "age": 17 },
                     { "id": "002", "name": "Bob", "age": 21 },
                     { "id": "003", "name": "Tom", "age": 11 },
-                    { "id": "004", "name": "Lily", "age": 19 }
-                ]
+                    { "id": "004", "name": "Lily", "age": 19 },
+                ],
+                keyword: "",
+                filterArr:[],
+            },
+            watch: {
+                keyword: {
+                    immediate: true,
+                    handler(val) {
+                        console.log("keyword改变了")
+                        this.filterArr = this.personArr.filter((e) => {
+                            return e.name.toLowerCase().includes(val.toLowerCase())
+                        })
+                    }
+                }
             }
 
         })

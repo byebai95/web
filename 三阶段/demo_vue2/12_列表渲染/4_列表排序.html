@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+
+    <div class="root">
+        <h2>人员列表</h2>
+
+        <input type="text" v-model="keyword">
+        <button @click="sortType = 1">年龄升序</button>
+        <button @click="sortType = 2">年龄降序</button>
+        <button @click="sortType = 0">原序</button>
+
+        <ul>
+            <li v-for="e in filterArr" :key="e.id">
+                {{e.id}} --- {{e.name}} --- {{e.age}}
+            </li>
+        </ul>
+
+
+    </div>
+
+    <script>
+
+        let vm = new Vue({
+            el: ".root",
+            data: {
+                personArr: [
+                    { "id": "001", "name": "Lucy", "age": 17 },
+                    { "id": "002", "name": "Bob", "age": 21 },
+                    { "id": "003", "name": "Tom", "age": 11 },
+                    { "id": "004", "name": "Lily", "age": 19 },
+                ],
+                keyword: "",
+                sortType: 0,
+            },
+            computed: {
+                filterArr() {
+                    const arr = this.personArr.filter((e) => {
+                        return e.name.toLowerCase().includes(this.keyword.toLowerCase())
+                    })
+
+                    if (this.sortType) {
+                        arr.sort((e1, e2) => {
+                            return this.sortType ===1 ? e1.age -e2.age : e2.age - e1.age
+                        })
+                    }
+                    return arr
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
