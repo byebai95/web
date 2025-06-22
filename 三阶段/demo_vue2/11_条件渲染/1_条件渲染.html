@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+
+    <div class="root">
+        <span>当前 Number = {{Number}}</span><br>
+        <button @click="Number++"> Number++</button>
+
+        <h4 v-show="Number === 1">Jack</h4>
+        <h4 v-show="Number === 2">Lucy</h4>
+
+
+        <h4 v-if="Number === 3">Bob</h4>
+        <h4 v-if="Number === 4">Tom</h4>
+
+        <template v-if="Number === 5">
+            <h4>Google</h4>
+            <h4>Baidu</h4>
+        </template>
+
+    </div>
+
+
+    <script>
+        let vm = new Vue({
+            el: ".root",
+            data: {
+                Number: 0
+            },
+            watch: {
+                Number: {
+                    handler(newVal, oldVal) {
+                        console.log("Number 变成了", newVal)
+                        if (this.Number === 10) {
+                            this.Number = 0
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
