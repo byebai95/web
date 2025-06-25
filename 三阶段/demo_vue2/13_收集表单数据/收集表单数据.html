@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+
+    <div class="root">
+        <form @submit.prevent="showInfo">
+            账号：<input type="text" v-model="userInfo.account"><br>
+            密码：<input type="password" v-model="userInfo.password"><br>
+
+            性别：男 <input type="radio" name="sex" value="male" v-model="userInfo.sex">
+            女 <input type="radio" name="sex" value="female" v-model="userInfo.sex"><br>
+
+
+            爱好：抽烟 <input type="checkbox" value="smoking" v-model="userInfo.hobby">
+            喝酒 <input type="checkbox" value="drinking" v-model="userInfo.hobby">
+            学习 <input type="checkbox" value="study" v-model="userInfo.hobby"><br>
+
+            城市：<select name="city" v-model="userInfo.city">
+                <option value="beijing">北京</option>
+                <option value="shanghai">上海</option>
+                <option value="shenzhen">深圳</option>
+            </select>
+            <br>
+            其他：<textarea v-model="userInfo.other"></textarea><br>
+
+            <button>提交</button>
+        </form>
+
+    </div>
+
+    <script>
+
+        let vm = new Vue({
+            el: ".root",
+            data: {
+                userInfo: {
+                    account: "",
+                    password: "",
+                    sex: "",
+                    hobby: [],
+                    city: "",
+                    other: "",
+                }
+            },
+            methods: {
+                showInfo() {
+                    console.log(JSON.stringify(this.userInfo))
+                }
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

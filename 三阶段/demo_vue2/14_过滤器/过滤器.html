@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../js/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/dayjs/1.11.13/dayjs.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class="root">
+        <!-- 常规输出 -->
+        <span> data : {{time}}</span><br>
+
+        <!-- 过滤器实现 -->
+        <span> data : {{time | fmtTime()}}</span>
+    </div>
+
+
+    <script>
+        let vm = new Vue({
+            el: ".root",
+            data: {
+                time: 1750857084733
+            },
+            filters: {
+                fmtTime(value) {
+                    console.log("使用了过滤器")
+                    return dayjs(value).format('YYYY-MM-DD HH:mm:ss SSS')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+
+    <!-- 
+    
+    vue 数据监控原理：
+    data原始数据 ->  vue 处理  -> 再赋值vue._data = data
+    1.vue数据监控是通过数据对象get / set 方式实现，修改调用set, 同时修改页面数据
+    2.数据类型的数据需要通过数组原始函数调用，通过 “=“ 复制，vue将无法监视到数据
+    3.Vue.set 与 vm.$set 可以动态的添加属性到 data ，同时生成 get / set 函数
+
+    
+    -->
+
+    <div class="root">
+        <h2>人员列表</h2>
+        <ul>
+            <li v-for="e in personArr" :key="e.id">
+                {{e.id}} --- {{e.name}} --- {{e.age}}
+            </li>
+        </ul>
+
+
+    </div>
+
+    <script>
+
+        let vm = new Vue({
+            el: ".root",
+            data: {
+                personArr: [
+                    { "id": "001", "name": "Lucy", "age": 17 },
+                    { "id": "002", "name": "Bob", "age": 21 },
+                    { "id": "003", "name": "Tom", "age": 11 },
+                    { "id": "004", "name": "Lily", "age": 19 },
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>
