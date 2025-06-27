@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- v-pre 修饰的内容，vue不做处理，可以加快编译 -->
+    <div class="root">
+        <span v-pre>不使用vue</span><br>
+        <span v-pre>不使用vue {{number}}</span><br>
+        <span>当前值:{{number}}</span><br>
+        <button @click="number++">number自增</button><br>
+    </div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+        let vm = new Vue({
+            el: ".root",
+            data: {
+                number: 0
+            }
+        })
+    </script>
+</body>
+
+</html>

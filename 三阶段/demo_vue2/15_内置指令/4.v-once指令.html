@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- v-once 网页首次动态渲染后， v-once内容将视为静态 -->
+    <div class="root">
+        <span v-once>初始值:{{number}}</span><br>
+        <span>当前值:{{number}}</span><br>
+        <button @click="number++">number自增</button><br>
+    </div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+        let vm = new Vue({
+            el: ".root",
+            data: {
+                number: 0
+            }
+        })
+    </script>
+</body>
+
+</html>
