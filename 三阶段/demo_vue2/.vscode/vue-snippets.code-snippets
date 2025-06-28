@@ -1,0 +1,283 @@
+{
+  "Vue Instance": {
+    "prefix": "vue",
+    "body": [
+      "new Vue({",
+      "  el: '#app',",
+      "  data: {",
+      "    $1",
+      "  },",
+      "  methods: {",
+      "    $2",
+      "  },",
+      "  computed: {",
+      "    $3",
+      "  },",
+      "  watch: {",
+      "    $4",
+      "  }",
+      "})"
+    ],
+    "description": "创建Vue实例"
+  },
+  "Vue Data": {
+    "prefix": "data",
+    "body": [
+      "data: {",
+      "  $1",
+      "}"
+    ],
+    "description": "Vue数据属性"
+  },
+  "Vue Methods": {
+    "prefix": "methods",
+    "body": [
+      "methods: {",
+      "  $1() {",
+      "    $2",
+      "  }",
+      "}"
+    ],
+    "description": "Vue方法"
+  },
+  "Vue Computed": {
+    "prefix": "computed",
+    "body": [
+      "computed: {",
+      "  $1() {",
+      "    return $2",
+      "  }",
+      "}"
+    ],
+    "description": "Vue计算属性"
+  },
+  "Vue Watch": {
+    "prefix": "watch",
+    "body": [
+      "watch: {",
+      "  $1(newVal, oldVal) {",
+      "    $2",
+      "  }",
+      "}"
+    ],
+    "description": "Vue监听器"
+  },
+  "Vue Directive": {
+    "prefix": "v-",
+    "body": [
+      "v-$1=\"$2\""
+    ],
+    "description": "Vue指令"
+  },
+  "Vue Text": {
+    "prefix": "v-text",
+    "body": [
+      "v-text=\"$1\""
+    ],
+    "description": "Vue文本指令"
+  },
+  "Vue HTML": {
+    "prefix": "v-html",
+    "body": [
+      "v-html=\"$1\""
+    ],
+    "description": "Vue HTML指令"
+  },
+  "Vue If": {
+    "prefix": "v-if",
+    "body": [
+      "v-if=\"$1\""
+    ],
+    "description": "Vue条件渲染"
+  },
+  "Vue Show": {
+    "prefix": "v-show",
+    "body": [
+      "v-show=\"$1\""
+    ],
+    "description": "Vue显示隐藏"
+  },
+  "Vue For": {
+    "prefix": "v-for",
+    "body": [
+      "v-for=\"$1 in $2\" :key=\"$3\""
+    ],
+    "description": "Vue列表渲染"
+  },
+  "Vue Model": {
+    "prefix": "v-model",
+    "body": [
+      "v-model=\"$1\""
+    ],
+    "description": "Vue双向绑定"
+  },
+  "Vue Click": {
+    "prefix": "@click",
+    "body": [
+      "@click=\"$1\""
+    ],
+    "description": "Vue点击事件"
+  },
+  "Vue Bind": {
+    "prefix": ":",
+    "body": [
+      ":$1=\"$2\""
+    ],
+    "description": "Vue属性绑定"
+  },
+  "Vue Class": {
+    "prefix": ":class",
+    "body": [
+      ":class=\"$1\""
+    ],
+    "description": "Vue类绑定"
+  },
+  "Vue Style": {
+    "prefix": ":style",
+    "body": [
+      ":style=\"$1\""
+    ],
+    "description": "Vue样式绑定"
+  },
+  "Vue Created": {
+    "prefix": "created",
+    "body": [
+      "created() {",
+      "  $1",
+      "}"
+    ],
+    "description": "Vue创建钩子"
+  },
+  "Vue Mounted": {
+    "prefix": "mounted",
+    "body": [
+      "mounted() {",
+      "  $1",
+      "}"
+    ],
+    "description": "Vue挂载钩子"
+  },
+  "Vue Updated": {
+    "prefix": "updated",
+    "body": [
+      "updated() {",
+      "  $1",
+      "}"
+    ],
+    "description": "Vue更新钩子"
+  },
+  "Vue Destroyed": {
+    "prefix": "destroyed",
+    "body": [
+      "destroyed() {",
+      "  $1",
+      "}"
+    ],
+    "description": "Vue销毁钩子"
+  },
+  "JavaScript Function": {
+    "prefix": "function",
+    "body": [
+      "function $1($2) {",
+      "  $3",
+      "}"
+    ],
+    "description": "JavaScript函数"
+  },
+  "JavaScript Arrow Function": {
+    "prefix": "arrow",
+    "body": [
+      "const $1 = ($2) => {",
+      "  $3",
+      "}"
+    ],
+    "description": "JavaScript箭头函数"
+  },
+  "JavaScript Async Function": {
+    "prefix": "async",
+    "body": [
+      "async function $1($2) {",
+      "  try {",
+      "    $3",
+      "  } catch (error) {",
+      "    console.error(error);",
+      "  }",
+      "}"
+    ],
+    "description": "JavaScript异步函数"
+  },
+  "JavaScript Class": {
+    "prefix": "class",
+    "body": [
+      "class $1 {",
+      "  constructor($2) {",
+      "    $3",
+      "  }",
+      "  ",
+      "  $4() {",
+      "    $5",
+      "  }",
+      "}"
+    ],
+    "description": "JavaScript类"
+  },
+  "JavaScript If Statement": {
+    "prefix": "if",
+    "body": [
+      "if ($1) {",
+      "  $2",
+      "}"
+    ],
+    "description": "JavaScript if语句"
+  },
+  "JavaScript For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (let i = 0; i < $1.length; i++) {",
+      "  $2",
+      "}"
+    ],
+    "description": "JavaScript for循环"
+  },
+  "JavaScript ForEach": {
+    "prefix": "foreach",
+    "body": [
+      "$1.forEach($2 => {",
+      "  $3",
+      "})"
+    ],
+    "description": "JavaScript forEach循环"
+  },
+  "JavaScript Map": {
+    "prefix": "map",
+    "body": [
+      "$1.map($2 => $3)"
+    ],
+    "description": "JavaScript map方法"
+  },
+  "JavaScript Filter": {
+    "prefix": "filter",
+    "body": [
+      "$1.filter($2 => $3)"
+    ],
+    "description": "JavaScript filter方法"
+  },
+  "JavaScript Console Log": {
+    "prefix": "log",
+    "body": [
+      "console.log($1)"
+    ],
+    "description": "JavaScript console.log"
+  },
+  "JavaScript Try Catch": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "  $1",
+      "} catch (error) {",
+      "  console.error(error);",
+      "}"
+    ],
+    "description": "JavaScript try-catch"
+  }
+} 
