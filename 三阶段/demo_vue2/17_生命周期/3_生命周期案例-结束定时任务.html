@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+
+    <div class="root">
+        <!-- 刷新页面修改数据可见度 -->
+        <h1 :style="{opacity:opacity}">hello vue</h1>
+        <button @click="stop">点我停止</button>
+        <button @click="start">点我开启</button>
+    </div>
+
+
+    <script>
+        new Vue({
+            el: '.root',
+            data: {
+                opacity: 1,
+                timer: null
+            },
+            mounted() {
+                this.start()
+            },
+            methods: {
+                stop() {
+                    console.log('stop')
+                    clearInterval(this.timer)
+                },
+                start() {
+                    clearInterval(this.timer)
+                    this.timer = setInterval(() => {
+                        this.opacity -= 0.01
+                        if (this.opacity <= 0) this.opacity = 1
+                    }, 16)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -6,13 +6,15 @@
     <title>自定义指令示例</title>
 </head>
 <body>
-    <!-- 自定义指令，v-big 方法表达式的值 -->
+    <!-- 自定义指令，v-fbind 自动将焦点放在输入框 -->
     <script src="../js/vue.js"></script>
     
     <div class="root">
         <h2>number的值:{{number}}</h2>
-        <h2>number放大的值:<span v-big="number"></span></h2>
-        <button @click="number++">自增按钮</button>
+       
+        <button @click="number++">自增按钮</button><br>
+
+        <input type="text" v-fbind="number">
     </div>
     <script>
         // 测试AI自动补全：在这里输入 new Vue({ 然后按Ctrl+Space
@@ -24,8 +26,19 @@
             // 测试AI自动补全：在这里输入 directives: { 然后按Ctrl+Space
             directives: {
                 // 测试AI自动补全：在这里输入 big(el, binding) { 然后按Ctrl+Space
-                big(el, binding) {
-                    el.innerText = binding.value * 10;
+                fbind :{
+                    // 指令与元素成功绑定时调用
+                    bind(el, binding){
+                        el.value = binding.value
+                    },
+                    // 指令所在元素被插入页面时调用
+                    inserted(el, binding){
+                        el.focus()
+                    },
+                    // 指令所在的模板被重新解析时调用
+                    update(el, binding){
+                        el.value = binding.value
+                    }
                 }
             }
         })

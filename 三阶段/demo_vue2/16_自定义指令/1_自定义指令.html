@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义指令示例</title>
+</head>
+<body>
+    <!-- 自定义指令，v-big 将值放大10倍 -->
+    <script src="../js/vue.js"></script>
+    
+    <div class="root">
+        <h2>number的值:{{number}}</h2>
+        <h2>number放大的值:<span v-big="number"></span></h2>
+        <button @click="number++">自增按钮</button>
+    </div>
+    <script>
+        // 测试AI自动补全：在这里输入 new Vue({ 然后按Ctrl+Space
+        let vm = new Vue({
+            el: ".root",
+            data: {
+                number: 1
+            },
+            // 测试AI自动补全：在这里输入 directives: { 然后按Ctrl+Space
+            directives: {
+                // 测试AI自动补全：在这里输入 big(el, binding) { 然后按Ctrl+Space
+                big(el, binding) {
+                    el.innerText = binding.value * 10;
+                }
+            }
+        })
+        </script>
+</body>
+</html>
