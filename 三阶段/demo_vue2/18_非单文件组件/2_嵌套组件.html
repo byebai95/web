@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+
+    <div class="root">
+        <app></app>
+    </div>
+
+    <script>
+
+        const student = Vue.extend({
+            template: `
+            <div>
+                <h1>student {{name}} {{age}}</h1>
+            </div>
+            `,
+            data() {
+                return {
+                    name: "张三",
+                    age: 18
+                }
+            }
+        })
+
+        const teacher = Vue.extend({
+            template: `
+            <div>
+                <h1>teacher {{name}} {{age}}</h1>
+            </div>
+            `,
+            data() {
+                return {
+                    name: "李四",
+                    age: 20
+                }
+            }
+        })
+
+        const school = Vue.extend({
+            template: `
+            <div>
+                <h1>school {{name}} {{address}}</h1>
+                <student></student>
+                <teacher></teacher>
+            </div>
+            `,
+            data() {
+                return {
+                    name: "学校",
+                    address: "北京"
+                }
+            },
+            components: {
+                student,
+                teacher
+            }
+        })
+
+
+
+        /* 所有组件的父组件 */
+        const app = Vue.extend({
+            template: `
+            <div>
+                <school></school>
+            </div>
+            `,
+            components: {
+                school
+            }
+        })
+
+        new Vue({
+            el: ".root",
+            components: {
+                app
+            }
+        })
+    </script>
+</body>
+
+</html>

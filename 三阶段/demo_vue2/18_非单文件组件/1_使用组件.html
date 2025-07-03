@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- 3.使用组件 -->
+        <student></student>
+        <teacher></teacher>
+        <school></school>
+        <hello></hello>
+    </div>
+
+
+    <script>
+        // 1.创建全局组件
+        Vue.component('student', {
+            template: '<div>{{studentName}}</div>',
+            data() {
+                return {
+                    studentName: '张三'
+                }
+            }
+        })
+
+        Vue.component('teacher', {
+            template: '<div>{{teacherName}}</div>',
+            data() {
+                return {
+                    teacherName: '李四'
+                }
+            }
+        })
+
+        Vue.component('school', {
+            template: '<div>{{schoolName}}</div>',
+            data() {
+                return {
+                    schoolName: '清华大学'
+                }
+            }
+        })
+
+
+        // 局部组件
+        let hello = Vue.component('hello', {
+            template: '<div>{{helloName}}</div>',
+            data() {
+                return {
+                    helloName: 'hello'
+                }
+            }
+        })
+
+        // 2.注册组件
+        new Vue({
+            el: '.app',
+            components: {
+                hello
+            }
+        })
+    </script>
+</body>
+
+</html>
