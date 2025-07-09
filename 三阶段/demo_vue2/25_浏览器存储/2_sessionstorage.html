@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sessionStorage</title>
+</head>
+
+<body>
+    <!-- sessionStorage 是临时存储，关闭浏览器后数据会消失 -->
+    <h1>sessionStorage</h1>
+
+    <button id="btn" onclick="addData()">点击增加数据</button>
+    <button id="btn" onclick="getData()">点击获取数据</button>
+    <button id="btn" onclick="removeData()">点击删除数据</button>
+    <button id="btn" onclick="clearData()">点击清空数据</button>
+
+    <script>
+        function addData() {
+            sessionStorage.setItem('name', '张三');
+        }
+
+        function getData() {
+            console.log(sessionStorage.getItem('name'));
+        }
+
+        function removeData() {
+            sessionStorage.removeItem('name');
+        }
+
+        function clearData() {
+            sessionStorage.clear();
+        }   
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+
+<body>
+
+    <!-- localStorage 是永久存储，关闭浏览器后数据不会消失 -->
+    <h1>localStorage</h1>
+
+    <button id="btn" onclick="addData()">点击增加数据</button>
+    <button id="btn" onclick="getData()">点击获取数据</button>
+    <button id="btn" onclick="removeData()">点击删除数据</button>
+    <button id="btn" onclick="clearData()">点击清空数据</button>
+
+    <script>
+        function addData() {
+            localStorage.setItem('name', '张三');
+        }
+
+        function getData() {
+            console.log(localStorage.getItem('name'));
+        }
+
+        function removeData() {
+            localStorage.removeItem('name');
+        }
+
+        function clearData() {
+            localStorage.clear();
+        }   
+    </script>
+</body>
+
+</html>
