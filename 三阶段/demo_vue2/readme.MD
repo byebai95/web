@@ -138,10 +138,8 @@ npm run dev
 console.log(Date.now());
 ```
 
-
 前端插件网址
-https://www.bootcdn.cn/
-
+<https://www.bootcdn.cn/>
 
 获取网站的cookie
 document.cookie
@@ -151,124 +149,154 @@ document.cookie
 ## 各目录功能与用法详解
 
 ### 01_认识vue2
+
 - 介绍 Vue2 的基本概念、引入方式和最简单的 HelloWorld 案例。
 - 用法：直接用浏览器打开 HelloWorld.html。
 
 ### 02_模板语法
+
 - 演示 Vue 模板语法，包括插值表达式、指令、属性绑定等。
 - 用法：打开 template.html，查看各种模板语法的实际效果。
 
 ### 03_数据绑定
+
 - 讲解数据的单向绑定、双向绑定（v-model）等。
 - 用法：数据绑定.html 展示了数据和视图的联动。
 
 ### 04_el与data的2种写法
+
 - 展示 el 和 data 的对象写法与函数写法的区别。
 - 用法：el与data.html 里有详细注释和对比。
 
 ### 05_MVVM模型
+
 - 介绍 MVVM 架构思想，理解数据驱动视图的核心。
 - 用法：mvvm.html 结合注释理解 Vue 的响应式原理。
 
 ### 06_数据代理
+
 - 通过 Object.defineProperty 演示 Vue2 的数据代理实现原理。
 - 用法：1_简单数据代理.html、2_Object.defineProperty.html。
 
 ### 07_事件处理
+
 - 包含事件绑定、事件修饰符、键盘事件等。
 - 用法：分别打开 1_简单事件处理.html、2_事件修饰符.html、3_键盘事件.html。
 
 ### 08_计算属性
+
 - 展示计算属性与 methods 的区别和使用场景。
 - 用法：1_案例一_data.html、2_案例二_method.html、3_计算属性.html。
 
 ### 09_监视属性
+
 - 讲解 watch 的基本用法、深度监听、简写方式等。
 - 用法：01~05_修改天气相关 html 文件。
 
 ### 10_样式绑定
+
 - 演示 class、style 的动态绑定。
 - 用法：样式绑定.html。
 
 ### 11_条件渲染
+
 - v-if、v-else、v-show 的用法和区别。
 - 用法：1_条件渲染.html。
 
 ### 12_列表渲染
+
 - v-for 的基本用法、列表过滤、排序、数据监控原理。
 - 用法：1_基本列表.html、2_列表过滤_watch实现.html、3_列表过滤_computed实现.html、4_列表排序.html、5_vue数据监控原理.html。
 
 ### 13_收集表单数据
+
 - v-model 在表单控件上的应用。
 - 用法：收集表单数据.html。
 
 ### 14_过滤器
+
 - 介绍 Vue2 过滤器的定义和使用。
 - 用法：过滤器.html。
 
 ### 15_内置指令
+
 - v-text、v-html、v-cloak、v-once、v-pre 等指令的用法。
 - 用法：1.v-text指令.html ~ 5.v-pre指令.html。
 
 ### 16_自定义指令
+
 - 如何注册和使用自定义指令。
 - 用法：1_自定义指令.html、2_自定义指令.html。
 
 ### 17_生命周期
+
 - Vue 实例生命周期流程及常用钩子。
 - 用法：1_生命周期案例.html、2_生命周期流程.html、3_生命周期案例-结束定时任务.html。
 
 ### 18_非单文件组件
+
 - 组件的基本使用与嵌套。
 - 用法：1_使用组件.html、2_嵌套组件.html。
 
 ### 19_单文件组件
+
 - SFC（.vue 文件）开发模式，包含 App.vue、Student.vue、School.vue。
 - 用法：用 vue-cli 或 vite 创建项目，main.js 入口。
 
 ### 20_ref配置项
+
 - 通过 ref 获取组件或 DOM 元素实例。
 - 用法：vue_ref 子项目，运行 npm install & npm run serve。
 
 ### 21_props配置项使用
+
 - 父子组件通信，props 的类型、默认值、校验。
 - 用法：vue_props 子项目，运行 npm install & npm run serve。
 
 ### 22_mixin混合配置项
+
 - 复用逻辑的 mixin 用法。
 - 用法：vue_mixin 子项目，运行 npm install & npm run serve。
 
 ### 23_plugins插件
+
 - 插件的编写与使用。
 - 用法：vue_plugins 子项目，运行 npm install & npm run serve。
 
 ### 24_todoList案例
+
 - 综合案例，包含增删改查、组件拆分、事件传递、数据持久化等。
 - 用法：vue_todo 子项目，运行 npm install & npm run serve。
 
 ### 25_浏览器存储
+
 - localStorage、sessionStorage 的基本用法。
 - 用法：1_localstorage.html、2_sessionstorage.html。
 
 ### 26_自定义事件
+
 - 组件间通信的自定义事件（$emit/$on），父子、兄弟通信。
 - 用法：vue_event 子项目，运行 npm install & npm run serve，查看 src/components/MySchool.vue、MyStudent.vue。
 
 ---
 
 ## 推荐学习顺序
+
 1. 先看 01~05，理解 Vue2 基础和响应式原理。
 2. 依次学习事件、计算属性、watch、样式、条件、列表、表单、过滤器、指令。
 3. 进阶到组件、props、ref、mixin、插件、自定义事件。
 4. 最后做 todoList 综合案例。
 
 ## 运行说明
+
 - 纯 html 文件可直接用浏览器打开。
 - 含 package.json 的子项目（如 vue_ref、vue_props、vue_mixin、vue_plugins、vue_todo、vue_event）需进入对应目录，执行：
+
   ```bash
   npm install
   npm run serve
   ```
+
 - 推荐使用 VSCode + Vetur 插件或 Cursor 编辑器体验智能补全。
 
 ---
