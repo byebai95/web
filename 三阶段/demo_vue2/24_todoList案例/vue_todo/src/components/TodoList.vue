@@ -1,6 +1,6 @@
 <template>
     <div class="todo-main">
-        <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" :deleteTodo="deleteTodo" :checkTodo="checkTodo" />
+        <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" @deleteTodo="deleteTodo" @checkTodo="checkTodo" />
     </div>
 </template>
 
@@ -17,13 +17,21 @@ export default {
             type: Array,
             required: true
         },
-        deleteTodo: {
-            type: Function,
-            required: true
+        // deleteTodo: {
+        //     type: Function,
+        //     required: true
+        // },
+        // checkTodo: {
+        //     type: Function,
+        //     required: true
+        // }
+    },
+    methods: {
+        deleteTodo(id) {
+            this.$emit('deleteTodo', id)
         },
-        checkTodo: {
-            type: Function,
-            required: true
+        checkTodo(id) {
+            this.$emit('checkTodo', id)
         }
     }
 }

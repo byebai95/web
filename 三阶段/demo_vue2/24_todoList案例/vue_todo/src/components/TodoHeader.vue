@@ -7,7 +7,7 @@
 <script>
 export default {
     name: 'TodoHeader',
-    props: ['addTodo'],
+    // props: ['addTodo'],
     methods: {
         add(e) {
             const title = e.target.value.trim()
@@ -15,7 +15,7 @@ export default {
                 return
             }
             const todo = { id: Date.now(), title, done: false }
-            this.addTodo(todo)
+            this.$emit('addTodo', todo)
             e.target.value = ''
         }
     }
