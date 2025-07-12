@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="todo-container">
-    <TodoHeader @addTodo="addTodo" />
-    <TodoList :todos="todos" @deleteTodo="deleteTodo" @checkTodo="checkTodo" />
-    <TodoFooter :todos="todos" @clearAllDone="clearAllDone" @checkAll="checkAll" />
+    <TodoHeader />
+    <TodoList :todos="todos" />
+    <TodoFooter :todos="todos" />
   </div>
 </template>
 
@@ -53,6 +53,20 @@ export default {
         todo.done = value
       })
     }
+  },
+  created() {
+    this.$bus.$on('addTodo', this.addTodo)
+    this.$bus.$on('deleteTodo', this.deleteTodo)
+    this.$bus.$on('checkTodo', this.checkTodo)
+    this.$bus.$on('clearAllDone', this.clearAllDone)
+    this.$bus.$on('checkAll', this.checkAll)
+  },
+  beforeDestroy() {
+    this.$bus.$off('addTodo')
+    this.$bus.$off('deleteTodo')
+    this.$bus.$off('checkTodo')
+    this.$bus.$off('clearAllDone')
+    this.$bus.$off('checkAll')
   }
 }
 </script>

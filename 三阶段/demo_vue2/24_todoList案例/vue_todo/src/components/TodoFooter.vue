@@ -37,10 +37,10 @@ export default {
     },
     methods: {
         clearAllDone() {
-            this.$emit('clearAllDone')
+            this.$bus.$emit('clearAllDone')
         },
         handleAllDone() {
-            this.$emit('checkAll', this.isAllDone)
+            this.$bus.$emit('checkAll', this.isAllDone)
         }
     }
 }

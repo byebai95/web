@@ -13,24 +13,16 @@ export default {
         todo: {
             type: Object,
             required: true
-        },
-        // deleteTodo: {
-        //     type: Function,
-        //     required: true
-        // },
-        // checkTodo: {
-        //     type: Function,
-        //     required: true
-        // }
+        }
     },
     methods: {
         handleDelete(id) {
             if (confirm('确定删除吗？')) {
-                this.$emit('deleteTodo', id)
+                this.$bus.$emit('deleteTodo', id)
             }
         },
         handleCheck(id) {
-            this.$emit('checkTodo', id)
+            this.$bus.$emit('checkTodo', id)
         }
     }
 }
