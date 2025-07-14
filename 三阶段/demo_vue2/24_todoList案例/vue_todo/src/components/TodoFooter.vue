@@ -48,29 +48,7 @@ export default {
 
 <style>
 .todo-footer {
-    display: block;
-    align-items: center;
-    justify-content: space-between;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 16px 0 6px;
-    margin-top: 5px;
-    background: #fafbfc;
-    border-top: 1px solid #eee;
-}
-
-.todo-footer span {
-    display: inline-block;
-    cursor: pointer;
-}
-
-.todo-footer button {
-    float: right;
-    margin-left: 5px;
-    cursor: pointer;
-    background: #fafbfc;
-    border: 1px solid #eee;
-    border-radius: 3px;
-    padding: 0 5px;
+    background-color: #e95a79;
+    height: 50px;
 }
 </style>

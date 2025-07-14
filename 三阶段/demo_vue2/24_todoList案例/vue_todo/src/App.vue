@@ -52,6 +52,21 @@ export default {
       this.todos.forEach(todo => {
         todo.done = value
       })
+    },
+    editTodo(id) {
+      const todo = this.todos.find(todo => todo.id === id)
+      if (todo) {
+        todo.isEdit = !todo.isEdit
+      }
+    },
+    saveTodo(id, newTitle) {
+      const todo = this.todos.find(todo => todo.id === id)
+      if (todo) {
+        if (newTitle) {
+          todo.title = newTitle
+        }
+        todo.isEdit = false
+      }
     }
   },
   created() {
@@ -60,6 +75,8 @@ export default {
     this.$bus.$on('checkTodo', this.checkTodo)
     this.$bus.$on('clearAllDone', this.clearAllDone)
     this.$bus.$on('checkAll', this.checkAll)
+    this.$bus.$on('editTodo', this.editTodo)
+    this.$bus.$on('saveTodo', this.saveTodo)
   },
   beforeDestroy() {
     this.$bus.$off('addTodo')
@@ -67,45 +84,19 @@ export default {
     this.$bus.$off('checkTodo')
     this.$bus.$off('clearAllDone')
     this.$bus.$off('checkAll')
+    this.$bus.$off('editTodo')
+    this.$bus.$off('saveTodo')
   }
 }
 </script>
 
 <style>
-body {
-  background: #fff;
-}
-
-.btn {
-  display: inline-block;
-  padding: 4px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-.btn-danger {
-  color: #fff;
-  background-color: #da4f49;
-  border: 1px solid #bd362f;
-}
-
-.btn-danger:hover {
-  color: #fff;
-  background-color: #bd362f;
-}
-
 .todo-container {
-  width: 800px;
-  margin: 0 auto;
-  box-shadow: 0 0 5px #ccc;
-  background-color: #fff;
-}
-
-.todo-container .todo-wrap {
+  background-color: #9fddf6;
+  height: 500px;
   padding: 10px;
+  margin: 10px;
+  display: block;
+  width: 600px;
 }
 </style>

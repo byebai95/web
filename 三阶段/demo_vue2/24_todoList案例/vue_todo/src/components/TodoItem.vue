@@ -1,9 +1,15 @@
 <template>
-    <label class="todo-label">
+    <div class="todo-div">
         <input type="checkbox" :checked="todo.done" @change="handleCheck(todo.id)" />
-        <span>{{ todo.title }}</span>
-        <button class="btn-danger" @click="handleDelete(todo.id)">删除</button> <br>
-    </label>
+        <span v-if="!todo.isEdit">{{ todo.title }}</span>
+        <input v-else type="text" v-model="editTitle" @blur="handleSave(todo.id)" @keyup.enter="handleSave(todo.id)"
+            class="edit-input" />
+        <div class="button-group">
+            <button v-if="!todo.isEdit" class="btn-edit" @click="handleEdit(todo.id)">编辑</button>
+            <button v-else class="btn-edit" @click="handleSave(todo.id)">保存</button>
+            <button class="btn-danger" @click="handleDelete(todo.id)">删除</button>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -15,6 +21,11 @@ export default {
             required: true
         }
     },
+    data() {
+        return {
+            editTitle: ''
+        }
+    },
     methods: {
         handleDelete(id) {
             if (confirm('确定删除吗？')) {
@@ -23,35 +34,30 @@ export default {
         },
         handleCheck(id) {
             this.$bus.$emit('checkTodo', id)
+        },
+        handleEdit(id) {
+            this.editTitle = this.todo.title
+            this.$bus.$emit('editTodo', id)
+        },
+        handleSave(id) {
+            if (this.editTitle.trim()) {
+                this.$bus.$emit('saveTodo', id, this.editTitle.trim())
+            } else {
+                this.$bus.$emit('saveTodo', id)
+            }
         }
     }
 }
 </script>
 
 <style>
-.todo-label {
-    position: relative;
-    display: block;
-    padding-right: 60px;
-    /* 给按钮留空间 */
+.todo-div {
+    background-color: #d384f0;
+    height: 50px;
 }
 
-.btn-danger {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.todo-label:hover .btn-danger,
-.btn-danger:hover {
-    display: inline-block;
-}
-
-.btn-danger:hover,
-.btn-danger:focus {
-    color: #fff;
-    background-color: #bd362f;
+.button-group {
+    float: right;
+    margin-right: 10px;
 }
 </style>

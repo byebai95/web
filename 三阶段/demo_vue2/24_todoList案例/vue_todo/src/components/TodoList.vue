@@ -23,9 +23,7 @@ export default {
 
 <style>
 .todo-main {
-    margin-left: 0px;
-    border: 1px solid #ddd;
-    border-radius: 2px;
-    padding: 0px;
+    background-color: #cca693;
+    height: 300px;
 }
 </style>

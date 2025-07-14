@@ -13,7 +13,7 @@ export default {
             if (!title) {
                 return
             }
-            const todo = { id: Date.now(), title, done: false }
+            const todo = { id: Date.now(), title, done: false, isEdit: false }
             this.$bus.$emit('addTodo', todo)
             e.target.value = ''
         }
@@ -23,28 +23,7 @@ export default {
 
 <style>
 .todo-header {
-  background: #f7f7f7;
-  padding: 24px 32px 18px 32px;
-  border-radius: 12px 12px 0 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.todo-input {
-  width: 100%;
-  max-width: 420px;
-  padding: 12px 18px;
-  font-size: 18px;
-  border: 1px solid #e0e0e0;
-  border-radius: 24px;
-  outline: none;
-  background: #fff;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  transition: border-color 0.2s;
-}
-.todo-input:focus {
-  border-color: #42b983;
-  background: #f0faf7;
+    background-color: #cde87b;
+    height: 50px;
 }
 </style>
