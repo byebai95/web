@@ -14,15 +14,6 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ],
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
-  },
-  "include": [
-    "src/**/*"
-, "../../31_共享变量/vue_vuex/src/components/CalcComponent.vue"  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+    ]
+  }
 }
